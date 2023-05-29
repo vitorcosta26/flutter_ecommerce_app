@@ -37,14 +37,6 @@ class _CarouselSliderState extends State<CarouselSlider> {
             },
           ),
         ),
-        SmoothIndicator(
-          effect: const WormEffect(
-            dotColor: Colors.white,
-            activeDotColor: Colors.cyan,
-          ),
-          offset: newIndex.toDouble(),
-          count: widget.items.length,
-        )
       ],
     );
   }
