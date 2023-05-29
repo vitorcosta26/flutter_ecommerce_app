@@ -44,7 +44,6 @@ class ProductListScreen extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              appBarActionButton(AppbarActionType.leading),
               appBarActionButton(AppbarActionType.trailing),
             ],
           ),
@@ -79,7 +78,7 @@ class ProductListScreen extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            '30% OFF DURING \nCOVID 19',
+                            '30% OFF',
                             style: Theme.of(context)
                                 .textTheme
                                 .displaySmall
@@ -100,7 +99,7 @@ class ProductListScreen extends StatelessWidget {
                               ),
                             ),
                             child: Text(
-                              "Get Now",
+                              "Aproveite",
                               style: TextStyle(
                                 color: AppData.recommendedProducts[index]
                                     .buttonTextColor!,
@@ -110,12 +109,6 @@ class ProductListScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-                    const Spacer(),
-                    Image.asset(
-                      'assets/images/shopping.png',
-                      height: 125,
-                      fit: BoxFit.cover,
-                    )
                   ],
                 ),
               ),
@@ -131,20 +124,9 @@ class ProductListScreen extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
-            "Top categories",
+            "Categorias",
             style: Theme.of(context).textTheme.headlineMedium,
           ),
-          TextButton(
-            onPressed: () {},
-            style: TextButton.styleFrom(foregroundColor: AppColor.darkOrange),
-            child: Text(
-              "SEE ALL",
-              style: Theme.of(context)
-                  .textTheme
-                  .titleLarge
-                  ?.copyWith(color: Colors.deepOrange.withOpacity(0.7)),
-            ),
-          )
         ],
       ),
     );
@@ -173,11 +155,7 @@ class ProductListScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "Hello Sina",
-                  style: Theme.of(context).textTheme.displayLarge,
-                ),
-                Text(
-                  "Lets gets somethings?",
+                  "Vamos aproveitar as ofertas?",
                   style: Theme.of(context).textTheme.headlineSmall,
                 ),
                 _recommendedProductListView(context),

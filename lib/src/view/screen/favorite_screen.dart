@@ -13,7 +13,7 @@ class FavoriteScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Favorites",
+          "Favoritos",
           style: Theme.of(context).textTheme.displayLarge,
         ),
       ),

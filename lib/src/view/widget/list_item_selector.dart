@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:e_commerce_flutter/src/model/product_category.dart';
 import 'package:get/get.dart';
 
@@ -24,22 +23,14 @@ class _ListItemSelectorState extends State<ListItemSelector> {
       child: AnimatedContainer(
         margin: const EdgeInsets.only(left: 5),
         duration: const Duration(milliseconds: 500),
-        width: 50,
+        width: 100,
         height: 100,
         decoration: BoxDecoration(
-          color: item.isSelected == false
-              ? const Color(0xFFE5E6E8)
-              : const Color(0xFFf16b26),
+          color:
+              item.isSelected == false ? const Color(0xFFE5E6E8) : Colors.cyan,
           borderRadius: BorderRadius.circular(10),
         ),
-        child: IconButton(
-          splashRadius: 0.1,
-          icon: FaIcon(
-            item.icon,
-            color: item.isSelected == false
-                ? const Color(0xFFA6A3A0)
-                : Colors.white,
-          ),
+        child: TextButton(
           onPressed: () {
             widget.onItemPressed(index);
             for (var element in widget.categories) {
@@ -49,6 +40,13 @@ class _ListItemSelectorState extends State<ListItemSelector> {
             item.isSelected = true;
             setState(() {});
           },
+          child: Text(
+            item.text,
+            style: TextStyle(
+                color: item.isSelected == false
+                    ? const Color(0xFFA6A3A0)
+                    : Colors.white),
+          ),
         ),
       ),
     );

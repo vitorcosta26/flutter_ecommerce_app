@@ -1,6 +1,6 @@
 import 'package:e_commerce_flutter/src/model/product_size_type.dart';
 
-enum ProductType { all, watch, mobile, headphone, tablet, tv }
+enum ProductType { todas, vestuario, decoracao, beleza, cama, mesa, banho }
 
 class Product {
   String name;

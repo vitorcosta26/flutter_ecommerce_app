@@ -14,7 +14,7 @@ class CartScreen extends StatelessWidget {
   PreferredSizeWidget _appBar(BuildContext context) {
     return AppBar(
       title: Text(
-        "My cart",
+        "Meu carrinho",
         style: Theme.of(context).textTheme.displayLarge,
       ),
     );
@@ -83,8 +83,8 @@ class CartScreen extends StatelessWidget {
                     const SizedBox(height: 5),
                     Text(
                       controller.isPriceOff(product)
-                          ? "\$${product.off}"
-                          : "\$${product.price}",
+                          ? "R\$${product.off}"
+                          : "R\$${product.price}",
                       style: const TextStyle(
                         fontWeight: FontWeight.w900,
                         fontSize: 23,
@@ -107,7 +107,7 @@ class CartScreen extends StatelessWidget {
                             controller.decreaseItemQuantity(product),
                         icon: const Icon(
                           Icons.remove,
-                          color: Color(0xFFEC6813),
+                          color: Colors.cyan,
                         ),
                       ),
                       GetBuilder<ProductController>(
@@ -130,7 +130,7 @@ class CartScreen extends StatelessWidget {
                         splashRadius: 10.0,
                         onPressed: () =>
                             controller.increaseItemQuantity(product),
-                        icon: const Icon(Icons.add, color: Color(0xFFEC6813)),
+                        icon: const Icon(Icons.add, color: Colors.cyan),
                       ),
                     ],
                   ),
@@ -158,12 +158,12 @@ class CartScreen extends StatelessWidget {
             () {
               return AnimatedSwitcherWrapper(
                 child: Text(
-                  "\$${controller.totalPrice.value}",
+                  "R\$${controller.totalPrice.value}",
                   key: ValueKey<int>(controller.totalPrice.value),
                   style: const TextStyle(
                     fontSize: 25,
                     fontWeight: FontWeight.w900,
-                    color: Color(0xFFEC6813),
+                    color: Colors.cyan,
                   ),
                 ),
               );
@@ -182,7 +182,7 @@ class CartScreen extends StatelessWidget {
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(padding: const EdgeInsets.all(20)),
           onPressed: controller.isEmptyCart ? null : () {},
-          child: const Text("Buy Now"),
+          child: const Text("Comprar"),
         ),
       ),
     );

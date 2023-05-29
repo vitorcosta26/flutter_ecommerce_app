@@ -19,7 +19,7 @@ class ProductController extends GetxController {
     }
     categories[index].isSelected = true;
 
-    if (categories[index].type == ProductType.all) {
+    if (categories[index].type == ProductType.todas) {
       filteredProducts.assignAll(allProducts);
     } else {
       filteredProducts.assignAll(allProducts.where((item) {
